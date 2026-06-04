@@ -1,0 +1,269 @@
+"Backend Development & Terminal Fundamentals"
+
+    1. "Frontend vs Backend Responsibilities"
+
+  ##FRONTEND -- Frontend only sends data.
+   Frontend is the part of the application that users can see and interact.
+ 
+  Examples:
+   Login Page
+   Registration Form
+   Buttons
+
+  Technologies:
+    HTML
+    CSS
+    JavaScript
+    React
+    Angular
+
+    Frontend Responsibilities
+      Show UI (User Interface)
+      Take input from users
+      Validate basic input
+      Send requests to backend
+      Display data received from backend
+
+
+   ##Backend--Backend is the brain of the application.
+    Users cannot directly see backend.   
+
+   Technologies:
+    Python
+    Java
+    Node.js
+    Go
+    PHP
+    C#
+
+   Frameworks:
+    FastAPI
+    Django
+    Spring Boot
+
+   Backend Responsibilities
+    Business Logic
+    Database Operations   
+    Authentication
+    Authorization
+    Security
+------------------------------------------------------
+    
+    2. "Client–Server Architecture"
+    
+  Clinet --Client requests data.
+     Examples:
+        Browser
+        Mobile App
+        Desktop App
+
+    Server --Server provides data and services.
+        Stores data
+        Runs backend code
+        Processes requests
+        Returns responses    
+
+         Client
+            ↓
+         Request
+            ↓
+         Server
+            ↓
+         Response
+            ↓
+         Client    
+---------------------------------------------------------
+
+    3. "How the Web Works"
+        (DNS → HTTP → Response)
+        DNS = Domain Name System
+
+            User (enter url)
+            ↓
+            URL  (browser not understand )
+            ↓
+            DNS  (change url to ip address )
+            ↓
+            IP Address
+            ↓
+            Server   (Connect to Server)
+            ↓
+            Backend  (Http Methods Works )
+            ↓
+            Database  (Validate request & Check database)
+            ↓
+            Response  ( Json Response)
+            ↓
+            Browser   (Display data user see)
+            
+ ---------------------------------------------------------------
+
+    4. Http Methods and Status Code 
+        
+        HTTP = HyperText Transfer Protocol
+        Communication language between client and server.        
+
+        GET- Used to fetch data.
+        POST- Create data.
+        PUT- Replace entire resource.
+        PATCH- Partial update.
+        DELETE- Delete resource.
+
+         HTTP Status Codes
+            200 OK-- Success
+            201 Created-- New resource created.
+            400 Bad Request-- Client sent wrong data.
+            401 Unauthorized-- Login required.
+            403 Forbidden-- Logged in but no permission.
+            404 Not Found-- Resource doesn't exist.
+            500 Internal Server Error-- Backend crashed.
+
+------------------------------------------------------------------------------------------------
+
+        5. REST API Fundamentals
+            REST = Representational State Transfer
+
+        Use HTTP Methods
+            GET
+            POST
+            PUT
+            PATCH
+            DELETE
+
+        Stateless
+          Server doesn't remember previous request.
+          Each request should contain everything needed.
+          Server does not store client session information between requests.
+
+
+        Stateless vs Stateful
+            
+        1. Stateful
+            Server ko pichhli requests yaad rehti hain.    
+ 
+        2. Stateless
+            Server ko kuch yaad nahi rehta.
+            Har request ke saath saari required information bhejni padti hai.   
+
+
+  Stateful              
+  ----------
+  Client                       
+   ↓
+  Server
+   ↓
+  User State Stored   
+
+
+Stateless
+------------
+Client
+   ↓ (Token)
+Server
+
+Client
+   ↓ (Token)
+Server
+
+Client
+   ↓ (Token)
+Server
+
+
+
+ JWT (JSON Web Token)-- ek token hota hai jo user ki identity aur kuch information ko securely carry karta hai.
+
+   A JWT is a compact string that contains user information and is used for authentication and authorization between a client and a server.
+
+    JWT Structure (3 Parts)
+
+    1.Header --  contain metadata about tokens 
+    2. Payload -- contain user realted data 
+    3. Signature --proves that the token was issued by the server & Nobody modified the payload.
+                    if someone change, then signature becomes invalid and the server rejects the token.
+
+    Authentication is the process of verifying a user's identity, 
+    while Authorization is the process of determining what resources or actions that authenticated user is allowed to access.
+
+    Authentication → Identity
+    Authorization  → Permission
+
+---------------------------------------------------------------------------------------------------
+
+  6. API Versioning Basics
+
+  It is the practice of maintaining multiple API version so that changes can introduced without breaking client application.
+  In this we don't break old API we create new API & have both to easy to access and understand 
+
+  Before Versioning -- changing an API could break existing client API versioning allow old & new contract to exist at same time 
+
+    Why versioning?
+       → Prevent breaking clients
+
+    Breaking change?
+        → Remove/rename/change contract
+
+    Non-breaking change?
+        → Add optional fields/endpoints
+
+    Most common strategy?
+        → URL versioning
+
+    When new version?
+        → Breaking changes
+
+    Why important?
+        → Mobile apps, frontend apps,
+          third-party integrations
+
+    What is deprecation?
+        → Old version supported temporarily
+
+    Main goal?
+        → Backward compatibility
+
+------------------------------------------------------------------------------------------------
+
+  HTTP 
+  Browser  <------>  Server
+  Data travels without encrypted
+
+  HTTPS
+  Browser <---- Encrypted ----> Server
+  Data is encrypted before being sent.
+
+  Benefits of HTTPS
+    There are 3 major benefits --
+    1. Confidentiality (Privacy)
+    2. Integrity--Nobody can modify data while traveling.
+    3. Authentication-- Confirms server identity.
+
+
+HTTPS Important beacause HTTPS encrypts communication between client and server, ensuring confidentiality, integrity, and authentication. It protects sensitive data like passwords, tokens, payment information, and personal information from attackers.
+
+
+    ->>Backend Trust Boundaries  
+        1.Never Trust Client Data
+            Because frontend code can be modified.
+             
+               User controls:
+                Browser
+                Mobile app
+                Requests
+                Headers
+                Payload
+
+                Backend controls:
+                Business logic
+                Security
+                Database
+
+          2.Backend Responsibilities at Trust Boundary
+              Whenever request enters backend:
+                --> Authenticate User      
+                --> Authorize User
+                --> Validate Input
+                --> Sanitize Data
+    
+-------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
