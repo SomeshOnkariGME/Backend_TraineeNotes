@@ -1,0 +1,111 @@
+Terminal, OS & Developer Environment (Industry-Ready Deep Dive)
+
+---Terminal---
+text based interface used to communicate with linux. 
+you have to type command.
+
+----Linux File Structre---
+/*
+-home -- user/app folder
+-etc  -- configuration
+-temp -- temp files
+-var  -- logs(system, app.)
+--usr
+--opt
+
+--------------
+Linux Command
+
+mkdir foldername -- makedirectory (folder create karta hai)
+cd foldername   ---us folder ke ander jana
+pwd-- print working directories
+
+rm-rf*  destroy wrong folder 
+ls-- list file 
+ls -la - hidden folder
+mkdir -p project/src  --- eek folder ke ander eek or folder banana hai par parent exist he nahi karta tab -p use karte hai bina iske error ayega !!
+
+touch filename -  file create karta hai 
+touch filename -- agar file already exist karti hai to time update ho jayega varna new file create ho jayegi .
+
+rm -- delete file 
+rm -rf -- delete folder 
+
+stat filename/folder  --give details of file and folder
+ps aux -- show runnig process [Task Manager]
+
+kill PID    --- we get pid throgh ps aux
+kill -9 PID   -- force stop 
+
+cp filename newfilename --- same destination mai file copy ho jati hai 
+cp -r foldername newfoldername --copy folder with inside data 
+cp filename [/path]  --- copy file one folder to another folder 
+cp foldername[/path]  ---  copy folder one to  another destination only name not inside data with it 
+mv filename newfile -- rename kar deta hai 
+
+
+cat filename -- view file contant 
+nano filename -- edit file contact 
+find . -name "*.txt" -- find file 
+ls - l --- file permission and file ownership 
+
+
+-------------------------------------------------------------------------------
+PATH
+Absolute path- Specified location per create hoga .  mkdir /home/user/project  
+Relative path- Current location ke andar create karega.  mkdir folder name
+--------------------------------------------------------------------------------------
+
+
+
+----Process and Port Management ----
+
+to check process -- ps 
+detalil -- ps aux 
+
+Kernal -> Top -> CPU -> Memory -> Screen
+
+Zombie Process -- Parent alive child process finish No cleanup
+
+Force kill -- Kill -9 1234
+
+Process Kill -kill PID
+
+Jobs - background process chal rhi ki nahi 
+Jobs show -- current shell & Job List and their state [ Stop, Run, Done]
+
+
+Port- Logical communicate door 
+     ex- 192.168.1.10 :80   80- port  remaining IP
+    
+    HTTPS -443
+    MYSQL-3306
+    SSH- 22
+    POSTGRES-5432
+    FLASK -5000
+    UNICORN, FASTAPI- 8000
+    HTTP - 80
+    NODE-3000
+
+
+PORT RANGE 0 - 1023
+
+
+
+------"Environment Variable"-----------
+Linux -> Environment -> Backend -> Application uses value 
+
+Why use this ?
+Database Credential 
+API KEYS
+JWT Secret
+Port Number
+
+EX==== Python 
+    bash -- export DB_pass = 1234end
+
+python
+    import os 
+    pass=os.getenv("DB_pass")
+    print(pass)
+    
