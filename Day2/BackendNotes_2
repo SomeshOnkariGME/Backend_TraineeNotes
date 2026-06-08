@@ -47,7 +47,7 @@ mv filename newfile -- rename kar deta hai
 cat filename -- view file contant 
 nano filename -- edit file contact 
 find . -name "*.txt" -- find file 
-ls - l --- file permission and file ownership 
+chmod --- file permission and file ownership 
 
 
 -------------------------------------------------------------------------------
@@ -64,6 +64,8 @@ to check process -- ps
 detalil -- ps aux 
 
 Kernal -> Top -> CPU -> Memory -> Screen
+
+RealTime -top 
 
 Zombie Process -- Parent alive child process finish No cleanup
 
@@ -108,4 +110,134 @@ python
     import os 
     pass=os.getenv("DB_pass")
     print(pass)
-    
+
+
+Python vs Node Comparison
+Feature	            Python	            Node.js
+Package Manager	    pip	                npm
+Registry	        PyPI	            npm Registry
+Dependency File	    requirements.txt	package.json
+Install	            pip install	        npm install
+Remove	            pip uninstall	    npm uninstall
+Package Folder	    site-packages	    node_modules    
+
+
+------GIT----------
+git track changes in source code over time.
+it manage diff versions 
+github- store code online 
+git- it is tool work on local machine 
+
+Edit File
+
+↓
+
+git add
+
+↓
+
+git commit
+
+↓
+
+git push
+
+↓
+
+GitHub
+
+
+---------------------------------------------------------------------
+git pull
+
+git switch -c feature-auth
+
+# code changes
+
+git status
+
+git add .
+
+git commit -m "Implemented JWT authentication"
+
+git push origin feature-auth
+-------------------------------------------------------------------------
+
+Pull Request
+
+↓
+
+Code Review
+
+↓
+
+Merge
+
+↓
+
+Deployment
+
+========================================================================
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mkdir
+cd 
+pwd 
+ls 
+ls -la 
+touch filename
+mkdir -p foldername
+
+rm 
+rm -rf *
+stat file/folder
+ps aux 
+
+kill PID
+kill -9 PID
+cp fn fn 
+cp -r fn nf 
+cp fn [path]
+cp fon [path] 
+cat fn
+nano fn
+find .name 
+ls -l
+
+ps 
+ps -aux 
+kill -9 pid
