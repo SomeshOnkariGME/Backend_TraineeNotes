@@ -65,7 +65,7 @@ detalil -- ps aux
 
 Kernal -> Top -> CPU -> Memory -> Screen
 
-RealTime -top 
+RealTime -top   
 
 Zombie Process -- Parent alive child process finish No cleanup
 
@@ -241,3 +241,5 @@ ls -l
 ps 
 ps -aux 
 kill -9 pid
+
+----Day 2 end
